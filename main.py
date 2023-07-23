@@ -1,16 +1,23 @@
 from datetime import datetime
+from git import Repo
 
+# Função para calcular a idade
+def calcular_idade(data_nascimento):
+    data_atual = datetime.now()
+    idade = data_atual.year - data_nascimento.year - ((data_atual.month, data_atual.day) < (data_nascimento.month, data_nascimento.day))
+    return idade
 
+# Data de nascimento da sua filha (substitua com a data correta)
 data_nascimento = datetime(2011, 4, 13)
 
-data_atual = datetime.now()
-idade = data_atual.year - data_nascimento.year - ((data_atual.month, data_atual.day) < (data_nascimento.month, data_nascimento.day))
+# Calcula a idade atual
+idade = calcular_idade(data_nascimento)
 
-
-readme_content = """
+# Texto do README.md com a idade da sua filha
+readme_content = f"""
 # Olá, pessoal!
 
-Meu nome é Sofia, tenho {IDADE} anos e estou empolgada em começar minha jornada na programação! Este é o meu espaço aqui no GitHub, onde vou aprender, criar e compartilhar minhas aventuras no mundo da programação.
+Meu nome é Sofia, tenho {idade} anos e estou empolgada em começar minha jornada na programação! Este é o meu espaço aqui no GitHub, onde vou aprender, criar e compartilhar minhas aventuras no mundo da programação.
 
 ## Sobre Mim:
 Sou uma jovem curiosa e apaixonada por tecnologia. Adoro resolver problemas e criar coisas novas usando a magia do código. Meu pai, [Aristides](https://github.com/AriHenrique), é um incrível engenheiro de dados, e com o apoio e incentivo dele, estou embarcando nessa emocionante jornada de aprendizado.
@@ -29,8 +36,12 @@ Vamos juntos nessa jornada emocionante! Obrigada por visitar o meu GitHub!
 Sofia Eduarda da Cruz
 """
 
+# Atualiza o arquivo README.md com o texto contendo a idade da sua filha
+repo = Repo(".")
+index = repo.index
+index.update(["README.md"], readme_content.encode("utf-8"))
 
-readme_content = readme_content.replace('{IDADE}', str(idade))
-
-with open('README.md', '+w') as file:
-    file.write(readme_content)
+# Faz o commit e o push usando o gitpython
+index.commit("Atualizar idade da filha")
+origin = repo.remote(name='origin')
+origin.push()

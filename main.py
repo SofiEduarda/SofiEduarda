@@ -42,9 +42,3 @@ index = repo.index
 # Atualiza o conteúdo do arquivo README.md no index
 with open('README.md', 'w') as file:
     file.write(readme_content)
-
-# Faz o commit e o push usando o gitpython
-index.add(["README.md"])
-index.commit("Atualizar idade da filha")
-origin = repo.remote(name='origin')
-origin.push()

@@ -1,4 +1,4 @@
-name: Atualizar Idade
+name: Atualizar Idade da Filha
 
 on:
   push:
@@ -17,15 +17,14 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
       - name: Update README
         run: python main.py
 
       - name: Commit Changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config --local user.email "sofiaeducruz@gmail.com"
-          git config --local user.name "Sofia Eduarda"
-          git add README.md
-          git commit -m "Atualizar idade" -a
-          git push
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Atualizar idade da filha" -a

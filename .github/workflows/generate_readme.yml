@@ -6,22 +6,8 @@ on:
       - main
 
 jobs:
-  update_readme:
+  update-readme:
+    name: Update Readme 
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Update README
-        run: python generate_readme.py
-
-      - name: Commit Changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "Atualizar idade" -a
+      - uses: SofiEduarda/SofiEduarda@master

@@ -1,6 +1,9 @@
-name: Atualizar Idade da Filha
+name: Atualizar Idade
 
 on:
+  schedule:
+    # Runs at 12am IST
+    - cron: '* * * * *'
   push:
     branches:
       - main

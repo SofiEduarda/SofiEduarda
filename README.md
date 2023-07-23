@@ -1,7 +1,7 @@
 
 # Olá, pessoal!
 
-Meu nome é Sofia, tenho 11 anos e estou empolgada em começar minha jornada na programação! Este é o meu espaço aqui no GitHub, onde vou aprender, criar e compartilhar minhas aventuras no mundo da programação.
+Meu nome é Sofia, tenho 12 anos e estou empolgada em começar minha jornada na programação! Este é o meu espaço aqui no GitHub, onde vou aprender, criar e compartilhar minhas aventuras no mundo da programação.
 
 ## Sobre Mim:
 Sou uma jovem curiosa e apaixonada por tecnologia. Adoro resolver problemas e criar coisas novas usando a magia do código. Meu pai, [Aristides](https://github.com/AriHenrique), é um incrível engenheiro de dados, e com o apoio e incentivo dele, estou embarcando nessa emocionante jornada de aprendizado.

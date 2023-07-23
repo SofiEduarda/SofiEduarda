@@ -22,6 +22,6 @@ jobs:
 
       - name: Commit Changes
         run: |
-          git config --local user.email "sofiaeducruz@github.com"
-          git config --local user.name "Sofia Eduarda"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git commit -m "Atualizar idade" -a

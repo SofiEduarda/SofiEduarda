@@ -36,12 +36,15 @@ Vamos juntos nessa jornada emocionante! Obrigada por visitar o meu GitHub!
 Sofia Eduarda da Cruz
 """
 
-# Atualiza o arquivo README.md com o texto contendo a idade da sua filha
 repo = Repo(".")
 index = repo.index
-index.update(["README.md"], readme_content.encode("utf-8"))
+
+# Atualiza o conteúdo do arquivo README.md no index
+with open('README.md', 'w') as file:
+    file.write(readme_content)
 
 # Faz o commit e o push usando o gitpython
+index.add(["README.md"])
 index.commit("Atualizar idade da filha")
 origin = repo.remote(name='origin')
 origin.push()
